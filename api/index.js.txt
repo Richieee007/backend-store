@@ -1,9 +1,3 @@
-const express = require('express');
-const app = express();
-app.use(express.json());
+import index from '../index'
 
-app.get('/', (req, res) => {
-    res.send('Express App is Running');
-});
-
-module.exports = app;
+export default index;

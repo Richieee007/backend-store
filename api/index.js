@@ -25,7 +25,7 @@ mongoose.connect('mongodb+srv://richieeeojok:j1Md0ChI35o04IME@cluster0.wtdjxfs.m
 
 //api Creation
 
-app.get('/', (req,res)=>{
+app.get('https://backend-store-dusky.vercel.app/api', (req,res)=>{
     res.send("Express App is Running")
 })
 

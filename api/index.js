@@ -1,5 +1,4 @@
 
-const port = 4000;
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -17,7 +16,11 @@ app.use(cors({
 }));
 
 //DataBase Connect With MongoDB
-mongoose.connect('mongodb+srv://richieeeojok:j1Md0ChI35o04IME@cluster0.wtdjxfs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/Ecommerce')
+mongoose.connect('mongodb+srv://richieeeojok:j1Md0ChI35o04IME@cluster0.wtdjxfs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/Ecommerce', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+
 
 
 //api Creation
@@ -277,11 +280,3 @@ app.post('/getcart', fetchUser, async (req,res) =>{
 
 
 
-
-app.listen(port,'0.0.0.0', (error)=>{
-    if(!error){
-        console.log("Server Running on Port " +port)
-    }else{
-        console.log("Error Starting Node: " +error)
-    }
-})
